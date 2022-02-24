@@ -1,7 +1,4 @@
 export default {
-  router: {
-    base: '/myapp/'
-  },
   target: 'static',
   head: {
     title: 'Blogwebsite',

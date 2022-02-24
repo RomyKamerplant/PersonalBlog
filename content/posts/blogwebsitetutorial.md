@@ -8,3 +8,7 @@ createdAt: 17.02.2022
 lastUpdatedAt: 24.02.22
 domain: Programming
 ---
+
+### How to create your own personal website
+
+This tutorial aims to show you how to create your own personal website using Nuxt.js and the Nuxt Content module. 
