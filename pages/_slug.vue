@@ -3,9 +3,13 @@
   <NavBar/>
   <article class="divide-y divide-gray-300 m-24 prose prose-sm sm:prose lg:prose-lg xl:prose-2xl mx-auto max-w-none mt-5">
     <header class="mx-auto text-center pb-10">
-      <div class="w-full">
-        <p>Written by {{ post.owner }}</p>
+      <div class="w-full flex">
+        <div>
+          <p>Written by {{ post.owner }}</p>
         <p>Posted on {{ $moment(post.createdAt).format('MMMM DD, YYYY') }}</p>
+        <p>Lastly updated on {{post.lastUpdatedAt}}</p>
+        </div>
+        <img class="max-h-96 mx-auto" :src="post.img"/>
       </div>
 
       <h2 class="text-5xl font-bold tracking-tight text-gray-900">
@@ -40,8 +44,10 @@
 <script>
 export default {
   async asyncData({ $content, params}) {
-    const post = await $content('posts').fetch()
-    return { post: post[0] }
+    const post = await $content('posts')
+    .where({ slug: params.slug })
+    .fetch()
+    return { post: post[0]}
   },
 }
 </script>

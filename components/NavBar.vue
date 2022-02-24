@@ -25,6 +25,8 @@
                 <NuxtLink to="/about"> About</NuxtLink></div>
                 <div class="bg-stone-50 text-lime-400 text-xl font-extrabold py-3 w-32 rounded-2xl grid place-items-center hover:text-gray-700 hover:bg-indigo-100">
                 <NuxtLink to="/contact"> Contact</NuxtLink></div>
+                <div class="bg-stone-50 text-lime-400 text-xl font-extrabold py-3 w-32 rounded-2xl grid place-items-center hover:text-gray-700 hover:bg-indigo-100">
+                <NuxtLink to="/subscribe"> Subscribe</NuxtLink></div>
         </div>
         
     </div>

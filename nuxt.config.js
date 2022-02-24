@@ -36,6 +36,10 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
     '@nuxt/content',
+    ['nuxt-supabase', {
+      supabaseUrl: 'https://tjncvmzueqzbbhfepjqy.supabase.co',
+      supabaseKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRqbmN2bXp1ZXF6YmJoZmVwanF5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2NDU2NjA5OTksImV4cCI6MTk2MTIzNjk5OX0.6299NCKUZoy1LCnU6pXXvLkVagsUCuLJX9G_pGzwc7M'
+    }]
   ],
   axios: {
     baseURL: '/',
