@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/travel", {data:[{posts:[{slug:"comotravel",description:"Como in Italy is a nice place.",title:"Travelling to Como",img:"Como.jpg",owner:"Jonas Wolber",createdAt:"2022-02-17T23:03:49.210Z",domain:"Travel"}]}],fetch:{},mutations:void 0});

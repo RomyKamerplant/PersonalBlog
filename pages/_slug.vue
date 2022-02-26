@@ -22,19 +22,27 @@
     />
   </article>
   <div class="grid place-items-center">
-    <h2>Comments</h2>
     
-    <div class="form-control w-full max-w-xs">
+    
+    <div class="form-control bg-violet-500 p-12 grid place-items-center rounded-xl">
+      <h2>Comments</h2>
   <label class="label">
-    <span class="label-text">Your email address</span>
-    <span class="label-text-alt">Alt label</span>
+    <span class="label-text">Your user name</span>
   </label>
-  <input type="text" placeholder="Type here" class="input input-bordered w-full max-w-xs">
-  <label class="label">
-    <span class="label-text-alt">Alt label</span>
-    <span class="label-text-alt">Alt label</span>
-  </label>
+  <div class="flex space-x-8">
+      <input type="text" placeholder="Type here" class="input input-bordered w-96 max-w-xs " v-model="newTask" @keypress.enter="addTask">
+  <button @click="addTask" class="bg-stone-50 text-lime-400 text-xl font-extrabold py-3 w-32 rounded-2xl grid place-items-center hover:text-gray-700 hover:bg-indigo-100">Add</button>
+  </div>
+      <div class="tasks">
+      <Task
+        v-for="(task, i) in $store.state.tasks"
+        :key="i"
+        :task="task" />
+    </div>
 </div>
+
+
+
   </div>
   <Footer/>
 </div>
@@ -49,5 +57,22 @@ export default {
     .fetch()
     return { post: post[0]}
   },
+  data (){
+    return {
+      newTask: ''
+    }
+  },
+  methods: {
+    addTask () {
+      if (this.newTask) {
+        this.$store.commit('ADD_TASK', this.newTask);
+        this.newTask = '';
+        this.storeTask()
+      }
+    },
+    storeTask(){
+      localStorage.setItem("tasks", JSON.stringify(this.todos));
+    },
+  }
 }
 </script>
